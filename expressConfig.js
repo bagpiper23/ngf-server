@@ -6,7 +6,7 @@ var express = require('express'),
     session = require('express-session'),
     path = require('path');
 
-var rootPath = path.normalize(__dirname + '/../../');
+var rootPath = path.normalize(__dirname);
 
 module.exports = function(app) {
   // app.use(logger('tiny'));
@@ -22,6 +22,6 @@ module.exports = function(app) {
   app.use(passport.session());
   
   app.use(express.static(rootPath));
-  app.use(express.static(rootPath + '/dist/ng-fundamentals'));
-  app.use('/events/', express.static(rootPath + '/dist/ng-fundamentals'));
+  app.use(express.static(rootPath + '/dist/ng-demo01'));
+  app.use('/events/', express.static(rootPath + '/dist/ng-demo01'));
 }
